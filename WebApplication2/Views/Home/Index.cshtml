@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>WainterOn</h1>
+    <p class="lead">Consulte o cardápio.</p>
+    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Gerenciamento de usuários</h2>
+        <p>
+            Crie, altere e exclua cadastros de funcionários, clientes e outros administradores.
+        </p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Gerenciamento de cardápio</h2>
+        <p>Crie, altere e exclua itens do seu cardápio.</p>
+        <p>@Html.ActionLink("Gerenciamento de Cardapio", "Index", "Lanches", new { id = 2 }, new { @class = "btn btn-default" })</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Pedidos</h2>
+        <p>Verifique os pedidos feitos pelo seus clientes.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+</div>

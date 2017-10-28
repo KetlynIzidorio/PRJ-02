@@ -1,0 +1,65 @@
+﻿@model WebApplication2.Models.Administrador
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Você tem certeza que deseja deletar esse usuário Administrador?</h3>
+<div>
+    <h4>Administrador</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nomeAdministrador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomeAdministrador)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emailAdministrador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emailAdministrador)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.userAdministrador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.userAdministrador)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.senhaAdministrador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.senhaAdministrador)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar para lista", "Index")
+        </div>
+    }
+</div>

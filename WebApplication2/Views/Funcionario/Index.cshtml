@@ -1,0 +1,52 @@
+﻿@model IEnumerable<WebApplication2.Models.Funcionario>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nomeFuncionario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cargoFuncionario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.userFuncionario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.senhaFuncionario)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nomeFuncionario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cargoFuncionario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.userFuncionario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.senhaFuncionario)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.Id }) |
+           
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

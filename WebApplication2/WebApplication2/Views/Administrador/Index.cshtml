@@ -1,0 +1,55 @@
+﻿@model IEnumerable<WebApplication2.Models.Administrador>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Insira Novo Administrador", "Create")
+</p>
+<table class="table">
+    <tr>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.nomeAdministrador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emailAdministrador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.userAdministrador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.senhaAdministrador)
+            
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.nomeAdministrador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emailAdministrador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.userAdministrador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.senhaAdministrador)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+         
+            @Html.ActionLink("Deletar", "Delete", new { id = item.Id })
+        </td>
+    </tr>
+}
+
+</table>
