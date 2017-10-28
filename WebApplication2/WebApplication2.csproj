@@ -165,11 +165,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="HtmlHelpers\PaginacaoHelpers.cs" />
     <Compile Include="Models\Administrador.cs" />
     <Compile Include="Models\Avaliacao.cs" />
     <Compile Include="Models\Clientes.cs" />
     <Compile Include="Models\Funcionario.cs" />
     <Compile Include="Models\Lanches.cs" />
+    <Compile Include="Models\Paginacao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
