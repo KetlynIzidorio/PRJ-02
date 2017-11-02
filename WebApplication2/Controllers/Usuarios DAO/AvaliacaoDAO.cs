@@ -26,13 +26,13 @@ namespace WebApplication2.Controllers.Usuarios_DAO
 
                 foreach (DataRow objLinha in objDataTable.Rows)
                 {
-                    Avaliacao objNovaAvaliacao = new Avaliacao();
-                    objNovaAvaliacao.idAvaliacao = objLinha["idAvaliacao"] != DBNull.Value ? Convert.ToInt32(objLinha["idAvaliacao"]) : 0;
-                    objNovaAvaliacao.nome = objLinha["nome"] != DBNull.Value ? Convert.ToString(objLinha["nome"]) : "";
-                    objNovaAvaliacao.email = objLinha["email"] != DBNull.Value ? Convert.ToString(objLinha["email"]) : "";
-                    objNovaAvaliacao.mensagem = objLinha["mensagem"] != DBNull.Value ? Convert.ToString(objLinha["mensagem"]) : "";
-
-                    lista.Add(objNovaAvaliacao);
+                    Avaliacao objNovoAvaliacao = new Avaliacao();
+                    objNovoAvaliacao.Id = objLinha["idAvaliacao"] != DBNull.Value ? Convert.ToInt32(objLinha["idAvaliacao"]) : 0;
+                    objNovoAvaliacao.nome = objLinha["nome"] != DBNull.Value ? Convert.ToString(objLinha["nome"]) : "";
+                    objNovoAvaliacao.email = objLinha["email"] != DBNull.Value ? Convert.ToString(objLinha["email"]) : "";
+                    objNovoAvaliacao.mensagem = objLinha["mensagem"] != DBNull.Value ? Convert.ToString(objLinha["mensagem"]) : "";
+                   
+                    lista.Add(objNovoAvaliacao);
                 }
                 return lista;
             }
@@ -45,25 +45,20 @@ namespace WebApplication2.Controllers.Usuarios_DAO
         public bool Avaliacao(Avaliacao avaliacao)
         {
             try
-            {
-                //LIMPA LISTA
+            {   //LIMPA LISTA
                 DAO.AcessoDadosMySQL.LimparParametros();
-
                 //CRIANDO RETORNO
                 object objRetorno = null;
-
                 //SE NAO FOR NULLO, ADICIONA PARAMETRO
                 if (avaliacao != null)
                 {
-                    DAO.AcessoDadosMySQL.AdicionarParametros("@idAvaliacao", avaliacao.idAvaliacao);
+                    DAO.AcessoDadosMySQL.AdicionarParametros("@idAvaliacao", avaliacao.Id);
                     DAO.AcessoDadosMySQL.AdicionarParametros("@nome", avaliacao.nome);
                     DAO.AcessoDadosMySQL.AdicionarParametros("@email", avaliacao.email);
                     DAO.AcessoDadosMySQL.AdicionarParametros("@mensagem", avaliacao.mensagem);
                     
 
-
-                    string strSQL = "insert into avaliacao (idAvaliacao, nome, email, mensagem) values (@idAvaliacao, @nome,@email,@mensagem); SELECT LAST_INSERT_idAvaliacao();";
-
+                    string strSQL = "insert into Avaliacao (idAvaliacao,Nome,Email,Mensagem) values ( @idAvaliacao,@nome,@email,@mensagem); SELECT LAST_INSERT_idAvaliacao();";
                     objRetorno = DAO.AcessoDadosMySQL.ExecutarManipulacao(CommandType.Text, strSQL);
                 }
 

@@ -18,6 +18,14 @@ namespace WebApplication2.Controllers
         {
             listaLanches = lanchesDAO.List();
             return View(listaLanches);
+          
+        }
+
+        public ActionResult Cardapio()
+        {
+            listaLanches = lanchesDAO.List();
+            return View(listaLanches);
+
         }
 
         // GET: Lanches/Details/5
@@ -40,7 +48,6 @@ namespace WebApplication2.Controllers
             {
                 listaLanches.Add(lanches);
                 lanchesDAO.Create(lanches);
-
                 return RedirectToAction("Index");
             }
             catch
@@ -68,6 +75,7 @@ namespace WebApplication2.Controllers
                     lanchesDAO.Edit(lanches);
                     return RedirectToAction("Index");
                 }
+
                 return View(lanches);
             }
             catch

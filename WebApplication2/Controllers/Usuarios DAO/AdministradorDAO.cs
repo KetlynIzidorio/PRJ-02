@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Web;
 using WebApplication2.Models;
+using DAO;
 
 namespace WebApplication2.Controllers.Usuarios_DAO
 {
@@ -43,7 +44,6 @@ namespace WebApplication2.Controllers.Usuarios_DAO
                 return lista;
             }
         }
-
 
         public bool Create(Administrador administrador)
         {
@@ -148,8 +148,6 @@ namespace WebApplication2.Controllers.Usuarios_DAO
             {
                 return false;
             }
-        }
-
-
+        }      
     }
 }

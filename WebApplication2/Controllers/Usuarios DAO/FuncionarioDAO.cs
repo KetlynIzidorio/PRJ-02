@@ -44,7 +44,6 @@ namespace WebApplication2.Controllers
             }
         }
 
-
         public bool Create(Funcionario funcionario)
         {
             try

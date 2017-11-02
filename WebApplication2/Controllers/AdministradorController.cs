@@ -7,6 +7,7 @@ using WebApplication2.Models;
 
 namespace WebApplication2.Controllers.Usuarios_DAO
 {
+  
     public class AdministradorController : Controller
     {
         AdministradorDAO administradorDAO = new AdministradorDAO();

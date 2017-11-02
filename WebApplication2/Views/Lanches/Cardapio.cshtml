@@ -1,0 +1,172 @@
+﻿@model IEnumerable<WebApplication2.Models.Lanches>
+
+@{
+    ViewBag.Title = "Cardapio";
+    Layout = "~/Views/Shared/Cardapio.cshtml";
+}
+<html>
+<body>
+    <!-- Menu Container -->
+    <div class="w3-container w3-black w3-padding-64 w3-xxlarge" id="menu">
+        <div class="w3-content">
+
+            <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">CARDÁPIO</h1>
+
+            <div class="w3-row w3-center w3-border w3-border-dark-grey">
+                <a href="javascript:void(0)" onclick="openMenu(event, 'Pizza');" id="myLink">
+                    <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Lanches</div>
+                </a>
+                <a href="javascript:void(0)" onclick="openMenu(event, 'Pasta');">
+                    <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Milk Shakes</div>
+                </a>
+                <a href="javascript:void(0)" onclick="openMenu(event, 'Starter');">
+                    <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Bebidas</div>
+                </a>
+            </div>
+            <div id="Pizza" class="w3-container menu w3-padding-32 w3-white">
+                <h1><b>Margherita</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$12.50</span></h1>
+                <p class="w3-text-grey">Fresh tomatoes, fresh mozzarella, fresh basil</p>
+                <button class="w3-button w3-round-xlarge">Escolha-me</button>
+                <hr>
+
+                <h1><b>Formaggio</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$15.50</span></h1>
+                <p class="w3-text-grey">Four cheeses (mozzarella, parmesan, pecorino, jarlsberg)</p>
+                <button class="w3-button w3-round-xlarge">Escolha-me</button>
+                <hr>
+
+                <h1><b>Chicken</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$17.00</span></h1>
+                <p class="w3-text-grey">Fresh tomatoes, mozzarella, chicken, onions</p>
+                <button class="w3-button w3-round-xlarge">Escolha-me</button>
+                <hr>
+
+                <h1><b>Pineapple'o'clock</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$16.50</span></h1>
+                <p class="w3-text-grey">Fresh tomatoes, mozzarella, fresh pineapple, bacon, fresh basil</p>
+                <button class="w3-button w3-round-xlarge">Escolha-me</button>
+                <hr>
+
+                <h1><b>Meat Town</b> <span class="w3-tag w3-red w3-round">NOVO!</span><span class="w3-right w3-tag w3-dark-grey w3-round">$20.00</span></h1>
+                <p class="w3-text-grey">Fresh tomatoes, mozzarella, hot pepporoni, hot sausage, beef, chicken</p>
+                <button class="w3-button w3-round-xlarge">Escolha-me</button>
+                <hr>
+
+                <h1><b>Parma</b> <span class="w3-tag w3-grey w3-round">New</span><span class="w3-right w3-tag w3-dark-grey w3-round">$21.50</span></h1>
+                <p class="w3-text-grey">Fresh tomatoes, mozzarella, parma, bacon, fresh arugula</p>
+                <button class="w3-button w3-round-xlarge">Escolha-me</button>
+            </div>
+
+            <div id="Pasta" class="w3-container menu w3-padding-32 w3-white">
+                <h1><b>Milk Shake de Ovomaltine</b> <span class="w3-tag w3-grey w3-round">Popular</span> <span class="w3-right w3-tag w3-dark-grey w3-round">$13.50</span></h1>
+                <button class="w3-button w3-round-xlarge">Escolha-me</button>
+                <hr>
+
+                <h1><b>Milk Shake de Morango</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$13.50</span></h1>
+                <button class="w3-button w3-round-xlarge">Escolha-me</button>
+                <hr>
+
+
+                <h1><b>Milk Shake Menta</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$11.00</span></h1>
+                <hr>
+                <button class="w3-button w3-round-xlarge">Escolha-me</button>
+
+                <h1><b>Milk Shake Sensação</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$11.00</span></h1>
+                <button class="w3-button w3-round-xlarge">Escolha-me</button>
+            </div>
+
+
+            <div id="Starter" class="w3-container menu w3-padding-32 w3-white">
+                <h1><b>Sucos</b> <span class="w3-tag w3-grey w3-round">FRUTAS</span><span class="w3-right w3-tag w3-dark-grey w3-round">$5.50</span></h1>
+                <p class="w3-text-grey">Laranja, Acerola e Maracujá</p>
+                <!-- BOTÃO CONTAINER -->
+                <body>
+                    <div class="w3-container">
+                        <div class="w3-dropdown-hover">
+                            <button class="w3-button w3-round-xlarge">Escolha-me</button>
+                            <div class="w3-dropdown-content w3-bar-block w3-border">
+                                <a href="#" class="w3-bar-item w3-button">Laranja</a>
+                                <a href="#" class="w3-bar-item w3-button">Acerola</a>
+                                <a href="#" class="w3-bar-item w3-button">Maracujá</a>
+                            </div>
+                        </div>
+                    </div>
+                </body>
+                <!-- BOTÃO CONTAINER -->
+                <hr>
+
+                <h1><b>Long Neck</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$6.50</span></h1>
+                <!-- BOTÃO CONTAINER -->
+                <body>
+                    <div class="w3-container">
+                        <div class="w3-dropdown-hover">
+                            <button class="w3-button w3-round-xlarge">Escolha-me</button>
+                            <div class="w3-dropdown-content w3-bar-block w3-border">
+                                <a href="#" class="w3-bar-item w3-button">Heineken</a>
+                                <a href="#" class="w3-bar-item w3-button">Budweiser</a>
+                                <a href="#" class="w3-bar-item w3-button">Stella</a>
+                            </div>
+                        </div>
+                    </div>
+                </body>
+                <!-- BOTÃO CONTAINER -->
+                <hr>
+
+                <h1><b>Capirinhas</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$10.00</span></h1>
+                <p class="w3-text-grey">Limão, Kiwi e Cerveja</p>
+                <!-- BOTÃO CONTAINER -->
+                <body>
+                    <div class="w3-container">
+                        <div class="w3-dropdown-hover">
+                            <button class="w3-button w3-round-xlarge">Escolha-me</button>
+                            <div class="w3-dropdown-content w3-bar-block w3-border">
+                                <a href="#" class="w3-bar-item w3-button">Limão</a>
+                                <a href="#" class="w3-bar-item w3-button">Kiwi</a>
+                                <a href="#" class="w3-bar-item w3-button">Cerveja</a>
+                            </div>
+                        </div>
+                    </div>
+                </body>
+                <!-- BOTÃO CONTAINER -->
+                <hr>
+
+                <h1><b>Água Mineral</b>  <span class="w3-right w3-tag w3-dark-grey w3-round">$1.50</span></h1>
+                <p class="w3-text-grey">Água Bonafont</p>
+                <button class="w3-button w3-round-xlarge">Escolha-me</button>
+            </div><br>
+
+        </div>
+
+           
+    </div>
+</body>
+</html>
+       <table class="table">
+        @foreach (var item in Model)
+            {
+
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Pao)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Molho)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Recheio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Queijo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Salada)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Comprar", "Edit", new { id = item.Id }) 
+
+                    </td>
+                </tr>
+            }
+
+        </table>
+ 

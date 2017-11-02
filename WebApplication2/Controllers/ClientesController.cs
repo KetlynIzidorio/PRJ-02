@@ -13,9 +13,9 @@ namespace WebApplication2.Controllers
         ClientesDAO clientesDAO = new ClientesDAO();
         public static List<Clientes> listaClientes = new List<Clientes>();
         // GET: Clientes
-        public ActionResult Index()
+        public ActionResult Index(/*int pagina =1, int tamanhoPagina = 10*/)
         { 
-            listaClientes = clientesDAO.List();
+            listaClientes = clientesDAO.List();   /*.(Skip(tamanhoPagina * (pagina - 1)).Take(tamanhoPagina))*/
             return View(listaClientes);
         }
 

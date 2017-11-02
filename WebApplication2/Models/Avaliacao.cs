@@ -9,7 +9,7 @@ namespace WebApplication2.Models
     public class Avaliacao
     {
         [Required(ErrorMessage = "Informe o id ")]
-        public int idAvaliacao { get; set; }
+        public int Id { get; set; }
 
         [Required(ErrorMessage = "Informe o nome do Administrador")]
         [Display(Name = "Nome")]

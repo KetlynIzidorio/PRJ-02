@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Configuration;
 using System.Linq;
 using System.Web;
@@ -26,10 +27,8 @@ namespace WebApplication2.Models
 
         [Required(ErrorMessage = "Informe o usuário do Administrador")]
         [Display(Name = "Senha")]
+        [DataType(DataType.Password)]
         public string senhaAdministrador { get; set; }
-
-
-
 
 
     }

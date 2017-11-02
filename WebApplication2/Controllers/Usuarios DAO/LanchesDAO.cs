@@ -26,16 +26,16 @@ namespace WebApplication2.Controllers.Usuarios_DAO
 
                 foreach (DataRow objLinha in objDataTable.Rows)
                 {
-                    Lanches objNovoLanches = new Lanches();
-                    objNovoLanches.Id = objLinha["idLanches"] != DBNull.Value ? Convert.ToInt32(objLinha["idLanches"]) : 0;
-                    objNovoLanches.Pao = objLinha["Nome"] != DBNull.Value ? Convert.ToString(objLinha["Nome"]) : "";
-                    objNovoLanches.Pao = objLinha["Pao"] != DBNull.Value ? Convert.ToString(objLinha["Pao"]) : "";
-                    objNovoLanches.Molho = objLinha["Molho"] != DBNull.Value ? Convert.ToString(objLinha["Molho"]) : "";
-                    objNovoLanches.Recheio = objLinha["Recheio"] != DBNull.Value ? Convert.ToString(objLinha["Recheio"]) : "";
-                    objNovoLanches.Queijo = objLinha["Queijo"] != DBNull.Value ? Convert.ToString(objLinha["Queijo"]) : "";
-                    objNovoLanches.Salada = objLinha["Salada"] != DBNull.Value ? Convert.ToString(objLinha["Salada"]) : "";
+                    Lanches objNovoLanche = new Lanches();
+                    objNovoLanche.Id = objLinha["idLanches"] != DBNull.Value ? Convert.ToInt32(objLinha["idLanches"]) : 0;
+                    objNovoLanche.Nome = objLinha["Nome"] != DBNull.Value ? Convert.ToString(objLinha["Nome"]) : "";
+                    objNovoLanche.Pao = objLinha["Pao"] != DBNull.Value ? Convert.ToString(objLinha["Pao"]) : "";
+                    objNovoLanche.Molho = objLinha["Molho"] != DBNull.Value ? Convert.ToString(objLinha["Molho"]) : "";
+                    objNovoLanche.Recheio = objLinha["Recheio"] != DBNull.Value ? Convert.ToString(objLinha["Recheio"]) : "";
+                    objNovoLanche.Queijo = objLinha["Queijo"] != DBNull.Value ? Convert.ToString(objLinha["Queijo"]) : "";
+                    objNovoLanche.Salada = objLinha["Salada"] != DBNull.Value ? Convert.ToString(objLinha["Salada"]) : "";
 
-                    lista.Add(objNovoLanches);
+                    lista.Add(objNovoLanche);
                 }
                 return lista;
             }
@@ -48,28 +48,23 @@ namespace WebApplication2.Controllers.Usuarios_DAO
         public bool Create(Lanches lanches)
         {
             try
-            {
-                //LIMPA LISTA
+            {   //LIMPA LISTA
                 DAO.AcessoDadosMySQL.LimparParametros();
-
                 //CRIANDO RETORNO
                 object objRetorno = null;
-
                 //SE NAO FOR NULLO, ADICIONA PARAMETRO
                 if (lanches != null)
                 {
-
-                    //DAO.AcessoDadosMySQL.AdicionarParametros("@idLanches", lanches.Id);
+                    DAO.AcessoDadosMySQL.AdicionarParametros("@idLanches", lanches.Id);
                     DAO.AcessoDadosMySQL.AdicionarParametros("@Nome", lanches.Nome);
                     DAO.AcessoDadosMySQL.AdicionarParametros("@Pao", lanches.Pao);
                     DAO.AcessoDadosMySQL.AdicionarParametros("@Molho", lanches.Molho);
                     DAO.AcessoDadosMySQL.AdicionarParametros("@Recheio", lanches.Recheio);
                     DAO.AcessoDadosMySQL.AdicionarParametros("@Queijo", lanches.Queijo);
                     DAO.AcessoDadosMySQL.AdicionarParametros("@Salada", lanches.Salada);
+                
 
-                    
-                    string strSQL = "insert into lanches (Nome, Pao, Molho, Recheio, Queijo, Salada) values (@Nome, @Pao, @Molho, @Recheio, @Queijo, @Salada); SELECT LAST_INSERT_idLanches();";
-                    
+                    string strSQL = "insert into Lanches (idLanches,Nome,Pao,Molho,Recheio,Queijo,Salada) values ( @idLanches,@Nome,@Pao,@Molho,@Recheio,@Queijo,@Salada); SELECT LAST_INSERT_idLanches();";
                     objRetorno = DAO.AcessoDadosMySQL.ExecutarManipulacao(CommandType.Text, strSQL);
                 }
 
@@ -105,7 +100,8 @@ namespace WebApplication2.Controllers.Usuarios_DAO
                     DAO.AcessoDadosMySQL.AdicionarParametros("@Queijo", lanches.Queijo);
                     DAO.AcessoDadosMySQL.AdicionarParametros("@Salada", lanches.Salada);
 
-                    string strSQL = "update lanches set idLanches = @idLanches, Nome= @Nome, Pao= @Pao, Molho = @Molho, Recheio= @Recheio, Queijo= @Queijo,  Salada = @Salada where idLanches = @idLanches; select @idLanches;";
+
+                    string strSQL = "update Lanches set Nome = @Nome, Pao = @Pao, Molho = @Molho, Recheio = @Recheio, Queijo = @Queijo, Salada = @Salada where idLanches = @idLanches; select @idLanches;";
                     objRetorno = DAO.AcessoDadosMySQL.ExecutarManipulacao(CommandType.Text, strSQL);
                 }
 
@@ -135,7 +131,7 @@ namespace WebApplication2.Controllers.Usuarios_DAO
                 {
                     DAO.AcessoDadosMySQL.AdicionarParametros("@idLanches", lanches.Id);
 
-                    string strSQL = "delete from lanches where idLanches = @idLanches; select @idLanches;";
+                    string strSQL = "delete from Lanches where idLanches = @idLanches; select @idLanches;";
                     objRetorno = DAO.AcessoDadosMySQL.ExecutarManipulacao(CommandType.Text, strSQL);
                 }
 
@@ -153,6 +149,5 @@ namespace WebApplication2.Controllers.Usuarios_DAO
                 return false;
             }
         }
-
     }
 }

@@ -151,16 +151,17 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AreaClienteController.cs" />
-    <Compile Include="Controllers\AvaliacaoController.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
     <Compile Include="Controllers\FuncionarioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\AdministradorController.cs" />
+    <Compile Include="Controllers\IngredientesController.cs" />
     <Compile Include="Controllers\LanchesController.cs" />
     <Compile Include="Controllers\Usuarios DAO\AdministradorDAO.cs" />
     <Compile Include="Controllers\Usuarios DAO\AvaliacaoDAO.cs" />
     <Compile Include="Controllers\Usuarios DAO\ClientesDAO.cs" />
     <Compile Include="Controllers\Usuarios DAO\FuncionarioDAO.cs" />
+    <Compile Include="Controllers\Usuarios DAO\IngredientesDAO.cs" />
     <Compile Include="Controllers\Usuarios DAO\LanchesDAO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -170,6 +171,7 @@
     <Compile Include="Models\Avaliacao.cs" />
     <Compile Include="Models\Clientes.cs" />
     <Compile Include="Models\Funcionario.cs" />
+    <Compile Include="Models\Ingredientes.cs" />
     <Compile Include="Models\Lanches.cs" />
     <Compile Include="Models\Paginacao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -216,11 +218,6 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="smartlogin\css\style.css" />
-    <Content Include="smartlogin\images\1.jpg" />
-    <Content Include="smartlogin\index.html" />
-    <Content Include="smartlogin\js\jquery-2.2.3.min.js" />
-    <Content Include="smartlogin\w3layouts-License.txt" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -230,7 +227,7 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\Cardapio.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_ClientLayout.cshtml" />
@@ -247,15 +244,18 @@
     <Content Include="Views\Funcionario\Delete.cshtml" />
     <Content Include="Views\Funcionario\Edit.cshtml" />
     <Content Include="Views\Shared\Login.cshtml" />
-    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Shared\_Avaliacao.cshtml" />
+    <Content Include="Views\AreaCliente\Index.cshtml" />
     <Content Include="Views\Lanches\Index.cshtml" />
     <Content Include="Views\Lanches\Create.cshtml" />
     <Content Include="Views\Lanches\Edit.cshtml" />
     <Content Include="Views\Lanches\Delete.cshtml" />
-    <Content Include="Views\Shared\_Avaliacao.cshtml" />
-    <Content Include="Views\AreaCliente\Avaliacao.cshtml" />
-    <Content Include="Views\AreaCliente\Index.cshtml" />
-    <Content Include="Views\Avaliacao\Avaliacao.cshtml" />
+    <Content Include="Views\Ingredientes\Delete.cshtml" />
+    <Content Include="Views\Ingredientes\Create.cshtml" />
+    <Content Include="Views\Ingredientes\Index.cshtml" />
+    <Content Include="Views\AreaCliente\Introdution.cshtml" />
+    <Content Include="Views\Ingredientes\Edit.cshtml" />
+    <Content Include="Views\Lanches\Cardapio.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

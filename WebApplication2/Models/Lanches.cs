@@ -8,8 +8,6 @@ namespace WebApplication2.Models
 {
     public class Lanches
     {
-
-
         [Required(ErrorMessage = "Informe o id do lanche")]
         public int Id { get; set; }
 

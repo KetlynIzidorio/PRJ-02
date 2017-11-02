@@ -1,0 +1,100 @@
+﻿
+@{
+    ViewBag.Title = "Introdution";
+    Layout = "~/Views/Shared/_ClientLayout.cshtml";
+}
+
+ <!-- About Container -->
+<div class="w3-container w3-padding-64 w3-red w3-grayscale w3-xlarge" id="about">
+    <div class="w3-content">
+        <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">Sobre Nós</h1>
+        <p>Em ambiente descolado e urbano, o Burguer Brand é mais que complet. Com um cardápio recheado de receitas que vão bem além dos sanduíches, está sempre pronta para surpreender com boa comida em qualquer ocasião. Os hambúrgueres merecem destaque: preparados com uma mistura de cortes nobres de carne, são produzidos internamente todos os dias, desde a limpeza e moagem da carne, até a montagem e formatação do produto. Sempre inovador, o menu traz criações que se tornaram referência na cidade, como o Bombom (hambúrguer de Angus com molho de tomate fresco servido no pão francês redondo).</p>
+        <p>
+            <strong>O chefe?</strong>  Willians Rodrigo
+
+            <body>
+
+                <div class="w3-container">
+                    <h2 class="w3-center">Conheça nossos lanches</h2>
+                </div>
+
+                <div class="w3-content w3-display-container">
+
+                    <div class="w3-display-container mySlides">
+                        <img src="img_fjords.jpg" style="width:100%">
+                        <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+                            X-salada, Norway
+                        </div>
+                    </div>
+
+                    <div class="w3-display-container mySlides">
+                        <img src="img_lights.jpg" style="width:100%">
+                        <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
+                            X-bacon, Norway
+                        </div>
+                    </div>
+
+                    <div class="w3-display-container mySlides">
+                        <img src="img_mountains.jpg" style="width:100%">
+                        <div class="w3-display-topleft w3-large w3-container w3-padding-16 w3-black">
+                            X-tudo
+                        </div>
+                    </div>
+
+                    <div class="w3-display-container mySlides">
+                        <img src="img_forest.jpg" style="width:100%">
+                        <div class="w3-display-topright w3-large w3-container w3-padding-16 w3-black">
+                            HotDog
+                        </div>
+                    </div>
+
+                    <div class="w3-display-container mySlides">
+                        <img src="img_mountains.jpg" style="width:100%">
+                        <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black">
+                            X-combo
+                        </div>
+                    </div>
+
+                    <button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
+                    <button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
+
+                </div>
+
+                <script>
+                        var slideIndex = 1;
+                        showDivs(slideIndex);
+
+                        function plusDivs(n) {
+                            showDivs(slideIndex += n);
+                        }
+
+                        function showDivs(n) {
+                            var i;
+                            var x = document.getElementsByClassName("mySlides");
+                            if (n > x.length) { slideIndex = 1 }
+                            if (n < 1) { slideIndex = x.length }
+                            for (i = 0; i < x.length; i++) {
+                                x[i].style.display = "none";
+                            }
+                            x[slideIndex - 1].style.display = "block";
+                        }
+                </script>
+
+            </body>
+            <h1><b>HORÁRIOS</b></h1>
+
+            <div class="w3-row">
+                <div class="w3-col s6">
+        <p>Segunda CLOSED</p>
+        <p>Terça & Quarta 17:00 - 00:00</p>
+        <p>Quinta 17:00 - 01:00</p>
+    </div>
+    <div class="w3-col s6">
+        <p>Sexta 17:00 - 03:00</p>
+        <p>Sábado 17:00 - 03:00</p>
+        <p>Domingo Closed</p>
+    </div>
+</div>
+
+
+

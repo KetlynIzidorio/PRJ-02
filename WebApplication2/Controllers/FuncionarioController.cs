@@ -51,7 +51,6 @@ namespace WebApplication2.Controllers
         // GET: Funcionario/Edit/5
         public ActionResult Edit(int id)
         {
-           
             var funcionario = listaFuncionario.Single(p => p.Id == id);
             return View(funcionario);
         }

@@ -42,4 +42,7 @@ body, h1, h2, h3, h4, h5, h6 {
     min-height: 90%;
 }
 
+.conteiner {
+    counter-increment:"w3-container w3-card-4 w3-light-grey w3-text-red w3-margin"
+}
 

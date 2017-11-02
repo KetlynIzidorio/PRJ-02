@@ -5,6 +5,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebApplication2.Models;
+using WebApplication2.Controllers.Usuarios_DAO;
+
 
 
 namespace WebApplication2.Controllers
@@ -16,56 +18,41 @@ namespace WebApplication2.Controllers
             return View();
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
+//        [HttpPost]
+//        [ValidateAntiForgeryToken]
+//        public ActionResult Login(Administrador objUser)
+//        {
+//            if (ModelState.IsValid)
+//            {
 
-            return View();
-        }
+//                //using (Administrador adm = new Administrador)
+//                //{
+//                Administrador Administrador = new Administrador();
+                   
+//                    var obj = Administrador(a => a.userAdministrador(objUser.userAdministrador) && a.senhaAdministrador.Equals(objUser.senhaAdministrador)).FirstOrDefault();
+//                    if (obj != null)
+//                    {
+//                        Administrador objlogin = new Administrador();
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
+//                        objlogin.userAdministrador = Administrador.userAdministrador;
+//                        objlogin["senhaAdministrador"] = obj.senhaAdministrador.ToString();
+//                        return RedirectToAction("Index2");
+//    }
+////}
+//            }
+//            return View(objUser);
+//        }
 
-            return View();
-        }
-
-        public ActionResult Login()
-        {
-            return View();
-        }
-
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Login(Administrador objUser)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        using (Administrador adm = new Administrador)
-        //        {
-        //            var obj = Administrador(a => a.userAdministrador(objUser.userAdministrador) && a.senhaAdministrador.Equals(objUser.senhaAdministrador)).FirstOrDefault();
-        //            if (obj != null)
-        //            {
-        //                Administrador objlogin = new Administrador();
-        //                objlogin["userAdministrador"] = obj.userAdministrador.ToString();
-        //                objlogin["senhaAdministrador"] = obj.senhaAdministrador.ToString();
-        //                return RedirectToAction("UserDashBoard");
-        //            }
-        //        }
-        //    }
-        //    return View(objUser);
-        //}
-
-        //public ActionResult UserDashBoard()
-        //{
-        //    if (Session["UserID"] != null)
-        //    {
-        //        return View();
-        //    }
-        //    else
-        //    {
-        //        return RedirectToAction("Login");
-        //    }
-        //}
+//        public ActionResult Index2()
+//{
+//    if (Session["UserID"] != null)
+//    {
+//        return View();
+//    }
+//    else
+//    {
+//        return RedirectToAction("Login");
+//    }
+//}
     }
 }

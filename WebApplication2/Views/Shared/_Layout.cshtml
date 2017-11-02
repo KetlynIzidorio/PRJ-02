@@ -23,11 +23,11 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Início", "Index", "Home")</li>
                     <li>@Html.ActionLink("Clientes", "Index", "AreaCliente")</li>
-                    <li>@Html.ActionLink("Avaliacao", "Avaliacao", "Avaliacao")</li>
-                    <li class="dropdown">
+                   <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gerenciamento do Cardápio <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li>@Html.ActionLink("Cardápio", "Index", "Lanches")</li>
+                            <li>@Html.ActionLink("Adicionar Ingredientes", "Index", "Ingredientes")</li>
+                            <li>@Html.ActionLink("Adicionar Lanches", "Index", "Lanches")</li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -47,7 +47,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - WainterOn, 2017 - K.I.</p>
+            <p>&copy; @DateTime.Now.Year - WainterOn - K.I.</p>
         </footer>
     </div>
 
