@@ -1,0 +1,186 @@
+﻿input:focus, button:focus, select:focus, textarea:focus {
+    outline: none !important;
+    border: 1px solid #2A3F54 !important;
+    box-shadow: 0 0 10px #719ECE !important;
+}
+
+input.input-validation-error,
+textarea.input-validation-error,
+select.input-validation-error {
+    background: #FEF1EC !important;
+    border: 1px solid #CD0A0A !important;
+}
+
+.imgwrapper {
+    display: block;
+    margin: auto;
+}
+
+    .imgwrapper img {
+        margin: 15px auto 5px;
+    }
+
+/* Classe para Mapa Responsivo */
+.map-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+}
+
+    .map-container > * {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+    }
+
+@media print {
+    .no-print, no-print * {
+        display: none !important;
+    }
+}
+
+.blink-msg {
+    background-color: #f7f7f7;
+    -webkit-animation-name: blink-msg; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 3s; /* Safari 4.0 - 8.0 */
+    animation-name: blink-msg;
+    /*-webkit-animation-iteration-count: initial;*/
+    animation-duration: 3s;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes blink-msg {
+    0% {
+        background-color: #f7f7f7;
+    }
+
+    50% {
+        background-color: #1ABB9C;
+    }
+
+    100% {
+        background-color: #f7f7f7;
+    }
+}
+
+/* Standard syntax */
+@keyframes blink-msg {
+    0% {
+        background-color: #f7f7f7;
+    }
+
+    50% {
+        background-color: #1ABB9C;
+    }
+
+    100% {
+        background-color: #f7f7f7;
+    }
+}
+
+
+/*Checkbox/Radio*/
+.btn span.glyphicon {
+    opacity: 0 !important;
+}
+
+.btn.active span.glyphicon {
+    opacity: 1 !important;
+}
+/*Checkbox/Radio*/
+
+p.nivel-1 {
+    display: list-item;
+    list-style-position: inside;
+    margin-left: 0px !important;
+}
+
+p.nivel-2 {
+    padding-left: 50px;
+}
+
+p.nivel-3 {
+    padding-left: 80px;
+}
+
+#datatable tbody tr:hover {
+    background-color: #ebe9e9 !important;
+    cursor: pointer;
+}
+
+.image_perfil {
+    width: 48px;
+    height: 48px;
+}
+
+.select_row {
+    background-color: #B0C4DE !important;
+    font-weight: bold !important;
+}
+
+.cursor_pointer {
+    cursor: pointer;
+}
+
+.tag_td {
+    background: #1ABB9C;
+    color: #fff !important;
+    border-width: 10px;
+}
+
+.texto-vermelho {
+    color: red;
+}
+
+.texto-verde {
+    color: #229911;
+}
+
+.blink-text-yellow {
+    -webkit-animation-duration: 3s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-name: blink-text-yellow; /* Safari 4.0 - 8.0 */
+    animation-duration: 3s;
+    animation-name: blink-text-yellow;
+    color: #73879C;
+    font-weight: bold;
+}
+
+/* Safari 4.0 - 8.0 */
+
+@-webkit-keyframes blink-text-yellow {
+    0% {
+        color: yellow;
+    }
+
+    50% {
+        color: #73879C;
+    }
+
+    100% {
+        color: yellow;
+    }
+}
+
+/* Standard syntax */
+
+@keyframes blink-text-yellow {
+    0% {
+        color: yellow;
+    }
+
+    50% {
+        color: #73879C;
+    }
+
+    100% {
+        color: yellow;
+    }
+}

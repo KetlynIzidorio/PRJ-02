@@ -18,7 +18,7 @@ namespace DAO
         // Criando a conexao com o banco 
         private static MySqlConnection CriarConexao()
         {
-            Conexao = new MySqlConnection(@"Server=localhost; Database=mydb; User id=root; password=ketlyn18;");
+            Conexao = new MySqlConnection(@"Server=localhost; Database=wainteron; User id=root; password=Aclame.1234;");
             Conexao.Open();
             return Conexao;
         }

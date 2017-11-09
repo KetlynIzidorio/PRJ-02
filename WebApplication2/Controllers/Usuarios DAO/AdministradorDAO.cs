@@ -79,7 +79,7 @@ namespace WebApplication2.Controllers.Usuarios_DAO
 
                 return false;
             }
-            catch (Exception)
+            catch (Exception ex )
             {
                 return false;
             }

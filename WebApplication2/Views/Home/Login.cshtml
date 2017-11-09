@@ -1,0 +1,71 @@
+﻿@model WebApplication2.Models.Login
+@{
+    Layout = null;
+}
+@Html.AntiForgeryToken()
+@Html.ValidationSummary(true)
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WainterOn</title>
+    <!-- Bootstrap -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="~/Content/custom.min.css" rel="stylesheet">
+    <!-- Project CSS -->
+    <link href="~/Content/ROMEO.css" rel="stylesheet" />
+
+</head>
+<body class="login">
+    <div class="login_wrapper">
+        <div class="animate form login_form">
+            <section class="login_content">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true)
+                    if (ViewBag.Error != null)
+                    {
+                        <div class="alert alert-danger">
+                            Usuário ou Senha incorretos
+                        </div>
+
+                    }
+                    <div>
+                        @Html.TextBoxFor(model => model.nomeUsuario, new { @class = "form-control", placeholder = "Usuário" })
+                    </div>
+                    <div>
+                        @Html.PasswordFor(model => model.senhaUsuario, new { @class = "form-control", placeholder = "Senha" })
+                    </div>
+                    <div class="dropdown">
+                        <div>
+                            Escolha o Tipo de Usuário:
+                            @Html.DropDownList("TipoUsuario", null, new { @class = "col-md-6 col-sm-6 col-xs-12 form-control" })
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <input type="submit" value="Entrar" class="btn btn-default submit" />
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                        <div class="separator">
+                            <div class="clearfix"></div>
+                            <br />
+                            <div>
+                                <p>©2016 Todos os direitos reservados.</p>
+                                <p>Versão: 1.0.0.1 </p>
+                            </div>
+                        </div>
+                }
+            </section>
+        </div>
+    </div>
+</body>
+</html>

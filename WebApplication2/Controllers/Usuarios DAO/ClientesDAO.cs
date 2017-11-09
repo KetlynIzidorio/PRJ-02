@@ -55,12 +55,10 @@ namespace WebApplication2.Controllers.Usuarios_DAO
                 //SE NAO FOR NULLO, ADICIONA PARAMETRO
                 if (clientes != null)
                 {
-
-                    DAO.AcessoDadosMySQL.AdicionarParametros("@idClientes", clientes.Id);
                     DAO.AcessoDadosMySQL.AdicionarParametros("@userClientes", clientes.userClientes);
                     DAO.AcessoDadosMySQL.AdicionarParametros("@senhaClientes", clientes.senhaClientes);
-                 
-                    string strSQL = "insert into clientes (idClientes, userClientes, senhaClientes) values (@idClientes, @userClientes, @senhaClientes); SELECT LAST_INSERT_idClientes();";
+
+                    string strSQL = "insert into clientes (userClientes, senhaClientes) values ( @userClientes, @senhaClientes); SELECT LAST_INSERT_idClientes();";
 
                     objRetorno = DAO.AcessoDadosMySQL.ExecutarManipulacao(CommandType.Text, strSQL);
                 }
@@ -74,7 +72,7 @@ namespace WebApplication2.Controllers.Usuarios_DAO
 
                 return false;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return false;
             }
